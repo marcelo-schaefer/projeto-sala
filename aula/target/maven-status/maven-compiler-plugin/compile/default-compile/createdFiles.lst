@@ -1,0 +1,12 @@
+com\prova\sala\SalaService.class
+com\prova\controller\OrganizadorController.class
+com\prova\controller\SalaContoller.class
+com\prova\pessoa\Pessoa.class
+com\prova\sala\Sala.class
+com\prova\pessoa\PessoaRepository.class
+com\prova\pessoa\PessoaService.class
+com\prova\ProvaApplication.class
+com\prova\sala\SalaTipo.class
+com\prova\organizador\OrganizadorService.class
+com\prova\sala\SalaRepository.class
+com\prova\controller\PessoaController.class

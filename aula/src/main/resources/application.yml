@@ -1,0 +1,11 @@
+server:
+   servlet:
+      contextPath: /api
+   port: 8080
+spring:
+  application:
+    name: prova
+  data:
+    mongodb: 
+      database: prova
+      uri: mongodb+srv://marcelo:likeboss@cluster0.z7jlp.mongodb.net/prova?retryWrites=true&w=majority
