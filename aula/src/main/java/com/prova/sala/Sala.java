@@ -1,26 +1,44 @@
 package com.prova.sala;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.prova.pessoa.Pessoa;
 
-@Document
+@Entity
+@Table(name = "sala")
 public class Sala {
 
 	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
+	
+	@Column(name = "nome")
 	private String nome;
+	
+	@Column(name = "tipo")
 	private SalaTipo tipo;
+	
+	@Column(name = "lotacao")
 	private Integer lotacao;
-	@Transient
-	@JsonProperty(access = Access.READ_ONLY)
-	private List<Pessoa> pessoas;
+	
+	@ManyToMany(cascade = CascadeType.REFRESH)
+	private List<Pessoa> pessoas = new ArrayList<>();
+	
+	
+	Sala(){
+		
+	}
 
 	public String getId() {
 		return id;
